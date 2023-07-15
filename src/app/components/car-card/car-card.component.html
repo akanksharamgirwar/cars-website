@@ -1,0 +1,83 @@
+<div class="card">
+    <div class="offer" *ngIf="carsData.priceOff > 0">
+        <div><img src="https://assets.cars24.com/production/c2b-website/230713161845/js/bf9760afb6f6f214ed4785e442dc4356.svg" alt="Discount" width="10" height="10"></div>
+        {{carsData.priceOff}}% off
+    </div>
+
+    <div class="card-carousel" >
+        <div class="card-carousel__outer">
+            <div class="card-carousel__inner" (scroll)="onScroll($event)"  #scrollContainer>
+                <div class="card-grid" *ngFor="let img of groupedFeatures" #scrollGrid>
+                    <img src={{img}} alt="Avatar" width="250" height="180">
+                </div>
+            </div>
+        </div>
+        <button class="outside-controller prev" [disabled]="currentGrid === 0" *ngIf="ShowArrows" (click)="scrollLeft()" ></button>
+        <button class="outside-controller next" [disabled]="currentGrid >= totalGrids-1" *ngIf="ShowArrows" (click)="scrollRight()"></button>
+    </div>
+
+
+
+    <div class="card-body">
+      <div class="card-header">
+        <h4><b>{{carsData.year}} {{carsData.modelName}}</b></h4> 
+        <div>
+            <img src="https://assets.cars24.com/production/c2b-website/230713161845/js/a7b5a250e71331e76e52ae4c1ac245d4.svg" alt="Add to wishlist" width="24" height="24">
+        </div>
+      </div>
+      <div class="details">
+        <p>{{carsData.traveledDistance}}</p>
+        <p>{{carsData.owner}}</p>
+        <p>{{carsData.carType}}</p>
+        <p>{{carsData.gasType}}</p>
+        <p>{{carsData.carNo}}</p>
+      </div> 
+      <div class="price-section">
+        <div class="emi">
+            <p class="new-price emi-new">{{carsData.newEmi}}</p>
+            <p class="old-price">{{carsData.oldEmi}}</p>
+        </div>
+        <div class="price">
+            <p class="new-price">{{carsData.currentPrice}}</p>
+            <p class="old-price">{{carsData.oldPrice}}</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><img width="14" height="14" src="https://assets.cars24.com/production/c2b-website/230713161845/js/cee9f2419a2f766f8fff2e7a1a5ad9ff.svg" alt="Address"></div>
+        Metro Walk, Rohini, New Delhi
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="wrapper" >
+    
+   
+</div>
+
+
+<!-- <div class="wrapper">
+    <div class="card__caption" >
+        <h2 class="card__caption-header"><strong>Learn Cutting-Edge Technologies</strong></h2>
+        <p class="card__caption-desc">All the Tools and Technologies to be taught in this Program</p>
+    </div>
+    <div class="card-carousel">
+        <div class="card-carousel__inner" #scrollContainer (scroll)="onScroll($event)">
+            <div class="card-grid" *ngFor="let courseFeatures of groupedFeatures" #scrollGrid>
+                <div class="card" *ngFor="let feature of courseFeatures">
+                    <div class="card-img">
+                        <img [src]="feature?.image?.image" loading="lazy">
+                    </div>
+                    <div class="card-feature">{{feature?.name}}</div>
+                </div>
+            </div>
+            <button *ngIf="!(currentGrid === 0 && currentGrid >= totalGrids-1)" class="outside-controller prev"
+                (click)="scrollLeft()" [disabled]="currentGrid === 0"></button>
+            <button *ngIf="!(currentGrid === 0 && currentGrid >= totalGrids-1)" class="outside-controller next"
+                (click)="scrollRight()" [disabled]="currentGrid >= totalGrids-1"></button>
+        </div>
+    </div>
+</div> -->

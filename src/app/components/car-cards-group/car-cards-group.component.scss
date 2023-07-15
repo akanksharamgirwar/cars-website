@@ -1,0 +1,15 @@
+.card-group{
+    margin: 120px auto 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 40px;
+    align-items: stretch;
+    width: 90%;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 680px) and (min-width: 400px) {
+    .card-group{
+        width: 70%;
+    }
+}
